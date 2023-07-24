@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Ordenes</h1>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Monto</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Producto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <th scope="row"> <%= order.id %> </th>
+        <td> <%= order.nombre %> </td>
+        <td> <%= order.precio %> </td>
+        <td> <%= order.descripcion %> </td>
+        <td> <%= order.cantidad %> </td>
+        <td><%= link_to "Mostrar producto", order, class:"btn btn-outline-secondary btn-sm" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="button">
+  <%= link_to "New order", new_order_path, class:"btn btn-outline-secondary btn-sm" %>
+</div>
+
+<%= will_paginate @orders, renderer: WillPaginate::ActionView::BootstrapLinkRenderer%>

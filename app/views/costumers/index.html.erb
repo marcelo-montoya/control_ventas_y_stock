@@ -1,0 +1,42 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Clientes</h1>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Edad</th>
+      <th scope="col">N° Ordenes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @costumers.each do |costumer| %>
+      <tr>
+        <th scope="row"> <%= costumer.id %> </th>
+        <td> <%= costumer.nombre %> </td>
+        <td> <%= costumer.email %> </td>
+        
+          <% if costumer.products.present? %>
+            <td> <%= costumer.products.count %> </td>
+          <% else %>
+            <td>No tiene ordenes</td>
+          <% end %>
+
+        <td><%= link_to "Mostrar cliente", costumer, class:"btn btn-outline-secondary btn-sm" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="button">
+
+  <%= link_to "Nuevo cliente", new_costumer_path, class:"btn btn-outline-secondary" %>
+</div>
+
+<%= will_paginate @costumers, renderer: WillPaginate::ActionView::BootstrapLinkRenderer%>
+
+
+  

@@ -1,0 +1,10 @@
+<h1>Editing order</h1>
+
+<%= render "form", order: @order %>
+
+<br>
+
+<div class="button">
+  <%= link_to "Show this order", @order, class:"btn btn-outline-secondary" %> |
+  <%= link_to "Back to orders", orders_path, class:"btn btn-outline-secondary" %>
+</div>

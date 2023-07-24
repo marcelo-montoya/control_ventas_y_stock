@@ -1,0 +1,23 @@
+<div id="<%= dom_id product %>">
+
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Cantidad </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <th scope="row"> <%= product.nombre %> </th>
+        <td> <%= product.precio %> </td>
+        <td> <%= product.descripcion %> </td>
+        <td> <%= product.cantidad %> </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
