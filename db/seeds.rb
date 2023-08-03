@@ -11,15 +11,16 @@
     Costumer.create(nombre: Faker::Movies::HarryPotter.character, email: "usuario#{1}@.correo.com")
 
 end
+
 50.times do |i|
 
-    Product.create(nombre: Faker::CryptoCoin.coin_name, precio: "#{990 * i}")
+    Product.create(nombre: Faker::CryptoCoin.coin_name, precio: "#{990 * i}", descripcion: Faker::Lorem.sentences(number: 1), cantidad: rand(1..25))
 
 end
 
 50.times do |i|
 
-    Order.create(monto: "#{1}", fechaorden: Time.now.strftime("%d-%m-%Y %H:%M"))
+    Order.create(monto: "#{1}", fechaorden: Time.now.strftime("%d-%m-%Y %H:%M"), costumer_id: rand(1..50), product_id: rand(1..50))
 
 end
 
@@ -31,6 +32,6 @@ end
 
 50.times do |i|
 
-    Tipocliente.create(nombre: "Minotista")
+    Tipocliente.create(nombre: "Minotista", costumer_id: rand(1..50))
 
 end

@@ -42,9 +42,11 @@
             <% if user_signed_in? %>
                 
                 <li><%= button_to "Cerrar sesión", destroy_user_session_path, class:"dropdown-item", method: :delete %></li>
-
-            <% end %>            
+            
+            <% else %>
+            
                 <li><%= link_to "Iniciar sesión", new_user_session_path, class:"dropdown-item" %></li>
+            <% end %>            
                 <li><%= link_to "Registrar", new_user_session_path, class:"dropdown-item" %></li>
           </ul>
 

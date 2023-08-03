@@ -17,10 +17,10 @@
     <% @orders.each do |order| %>
       <tr>
         <th scope="row"> <%= order.id %> </th>
-        <td> <%= order.nombre %> </td>
-        <td> <%= order.precio %> </td>
-        <td> <%= order.descripcion %> </td>
-        <td> <%= order.cantidad %> </td>
+        <td> <%= order.monto %> </td>
+        <td> <%= order.fechaorden %> </td>
+        <td> <%= order.costumer.nombre %> </td>
+        <td> <%= order.product.nombre %> </td>
         <td><%= link_to "Mostrar producto", order, class:"btn btn-outline-secondary btn-sm" %></td>
       </tr>
     <% end %>
@@ -31,4 +31,4 @@
   <%= link_to "New order", new_order_path, class:"btn btn-outline-secondary btn-sm" %>
 </div>
 
-<%= will_paginate @orders, renderer: WillPaginate::ActionView::BootstrapLinkRenderer%>
+<%= will_paginate @orders, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, class:"btn btn-outline-secondary btn-sm"%>
