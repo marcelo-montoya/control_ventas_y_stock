@@ -31,4 +31,4 @@
   <%= link_to "New order", new_order_path, class:"btn btn-outline-secondary btn-sm" %>
 </div>
 
-<%= will_paginate @orders, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, class:"btn btn-outline-secondary btn-sm"%>
+<%= will_paginate @orders, renderer: WillPaginate::ActionView::BootstrapLinkRenderer%>

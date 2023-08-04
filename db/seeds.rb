@@ -25,13 +25,51 @@ end
 end
 
 50.times do |i|
+    if i % rand(1..20) == 1
 
-    Tipopago.create(nombre: "Efectivo")
+        Tipopago.create(nombre: "Efectivo", order_id: rand(1..50))
 
+    elsif i % rand(1..20) == 0
+
+        Tipopago.create(nombre: "Debito", order_id: rand(1..50))
+
+    else
+
+        Tipopago.create(nombre: "Credito", order_id: rand(1..50))
+
+    end
 end
+
+# El mismo bloque, pero con while
+
+# i = 0 
+
+# while i < 50
+
+#     if i % rand(1..20) == 1
+
+#         Tipopago.create(nombre: "Efectivo", order_id: rand(1..50))
+
+#     elsif i % rand(1..20) == 0
+
+#         Tipopago.create(nombre: "Debito", order_id: rand(1..50))
+
+#     else
+
+#         Tipopago.create(nombre: "Credito", order_id: rand(1..50))
+
+#     end
+#     i += 1
+#  end
 
 50.times do |i|
 
-    Tipocliente.create(nombre: "Minotista", costumer_id: rand(1..50))
+    if i % rand(1..20) == 1
 
+        Tipocliente.create(nombre: "Minorista", costumer_id: rand(1..50))
+    
+    else
+        Tipocliente.create(nombre: "Mayorista", costumer_id: rand(1..50))
+    end
+    
 end
